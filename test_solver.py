@@ -3,8 +3,8 @@ import unittest
 
 from parameterized import parameterized
 
-# from solver import Solver
-from my_solver import MySolver
+from solver import Solver
+# from my_solver import MySolver
 
 
 def load_game_data():
@@ -26,12 +26,12 @@ class SolverTestCase(unittest.TestCase):
 
     @parameterized.expand(load_game_data, testcase_func_name=custom_name_func)
     def test_game_data(self, sudoku, solution):
-        # s = Solver.solve(sudoku)
-        s = MySolver.solve(sudoku)
+        s = Solver.solve(sudoku)
+        # s = MySolver.solve(sudoku)
         self.assertEqual(solution, s)
 
     def test_sudoku_one(self):
-        s = MySolver.solve(
+        s = Solver.solve(
             "700900000600030000000070100002000459000000600800004000025008010008300040060702500")
         self.assertEqual(
             "751946823684231975239875164312687459547193682896524731925468317178359246463712598", s)
