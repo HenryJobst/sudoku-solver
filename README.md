@@ -1,1 +1,1 @@
-= Sudoku solver in python
+# Sudoku solver in python
